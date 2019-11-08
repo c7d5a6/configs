@@ -1,3 +1,5 @@
+"
+"
 " Auto install Plug for vim
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -5,6 +7,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"
+"
 " Plugins By Plug 
 call plug#begin('~/.vim/plugged')
 
