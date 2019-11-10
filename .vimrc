@@ -15,18 +15,50 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'itchyny/lightline.vim'
+
+Plug 'neovimhaskell/haskell-vim'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'alx741/vim-hindent'
+
 call plug#end()
 
 
-call pathogen#infect()
 syntax on
 filetype plugin indent on
 set laststatus=2
+"
+"
+" Settings
+"let g:haskell_indent_disable = 1
+let g:haskell_indent_before_where = 2
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 2
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 6
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+let g:haskell_indent_guard = 2
+
+let g:hindent_on_save = 0
+
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 set noshowmode
 set number
+
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
 
 map <C-o> :NERDTreeToggle<CR>
 
@@ -38,6 +70,11 @@ colorscheme solarized
 
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 map ; :FZF<CR>
+
+let g:coc_node_path = "/usr/bin/node"
+set cmdheight=2
+let leader = "C"
+nnoremap KF :call CocAction('format')<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
