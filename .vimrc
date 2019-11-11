@@ -36,6 +36,10 @@ set laststatus=2
 "
 "
 " Settings
+
+"
+"
+" indent
 "let g:haskell_indent_disable = 1
 let g:haskell_indent_before_where = 2
 let g:haskell_indent_if = 3
@@ -46,8 +50,9 @@ let g:haskell_indent_after_bare_where = 2
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 2
+let g:hindent_on_save = 1
 
-let g:hindent_on_save = 0
+
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -109,7 +114,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> KD :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -187,7 +192,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " FZF config
-nnoremap <C-p> :Files<CR>
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>h :History<CR>
+nnoremap Fb :Buffers<CR>
+nnoremap Fh :History<CR>
+nnoremap Fr :Rg<CR>
 
